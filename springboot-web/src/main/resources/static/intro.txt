@@ -1,0 +1,3 @@
+/resources/static/为springboot默认的静态资源路径, html页面放到这就能直接访问。
+
+

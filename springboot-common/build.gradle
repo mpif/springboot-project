@@ -13,6 +13,10 @@ dependencies {
 //    api 'org.slf4j:slf4j-api:1.7.5'
 
     api 'com.google.guava:guava:31.1-jre'
+//    artifactId=commons-lang3
+//    groupId=org.apache.commons
+//    version=3.12.0
+    api 'org.apache.commons:commons-lang3:3.12.0'
     api 'com.lmax:disruptor:3.4.4'
     testImplementation 'junit:junit:4.5'
     testImplementation 'org.springframework:spring-test:4.3.14.RELEASE'

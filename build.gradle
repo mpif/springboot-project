@@ -21,6 +21,7 @@ subprojects {
 
     repositories {
         mavenLocal()
+
 //        maven {
 //            url = uri('https://oss.sonatype.org/content/repositories/snapshots')
 //        }
@@ -36,10 +37,14 @@ subprojects {
         maven {
             url "https://repo.spring.io/release"
         }
+//        mavenCentral()
+//        gradlePluginPortal()
+
+
 
     }
 
-    sourceCompatibility = '11'
+//    sourceCompatibility = '17'
 
     java {
         withSourcesJar()

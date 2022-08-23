@@ -13,8 +13,9 @@ pluginManagement {
 }
 
 rootProject.name = 'springboot-project'
-include(':springboot-common')
-include(':springboot-service')
-include(':springboot-web')
-
+include 'springboot-common'
+include 'springboot-provider'
+include 'springboot-service'
+include 'springboot-web'
+include 'springboot-rpc'
 

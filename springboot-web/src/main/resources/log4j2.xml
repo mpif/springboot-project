@@ -1,7 +1,7 @@
 <Configuration status="ERROR">
     <Appenders>
-        <RollingFile name="async-logger" filePattern="D:/Logs/springboot_asyncLogger-%d{yyyy-MM-dd}.log" fileName="D:/Logs/springboot_asyncLogger.log" immediateFlush="true">
-            <PatternLayout pattern="[%d{yyyy-MM-dd HH:mm:ss,SSS}] [%t] [%-5p] %l %m%n" />
+        <RollingFile name="async-logger" filePattern="D:/Logs/springboot-web-%d{yyyy-MM-dd}.log" fileName="D:/Logs/springboot-web.log" immediateFlush="true">
+            <PatternLayout pattern="[%d{yyyy-MM-dd HH:mm:ss,SSS}] [%-5p] [%F:%L] [%t] %m%n" />
             <Policies>
                 <SizeBasedTriggeringPolicy size="5MB"/>
             </Policies>
@@ -9,15 +9,20 @@
 
         <!-- 输出控制台日志的配置 -->
         <Console name="console" target="SYSTEM_OUT">
-            <PatternLayout pattern="[%d{yyyy-MM-dd HH:mm:ss,SSS}] [%t] [%-5p] %l %m%n"/>
+            <PatternLayout pattern="[%d{yyyy-MM-dd HH:mm:ss,SSS}] [%-5p] [%F:%L] [%t] %m%n"/>
         </Console>
 
     </Appenders>
 
     <Loggers>
-        <AsyncLogger name="com.codefans" level="DEBUG" additivity="false">
+        <Root level="DEBUG">
+            <AppenderRef ref="async-logger" />
+            <AppenderRef ref="console" />
+        </Root>
+        <AsyncLogger name="com.codefans" includeLocation="true" level="INFO" additivity="false">
             <AppenderRef ref="async-logger" />
             <AppenderRef ref="console" />
         </AsyncLogger>
     </Loggers>
+
 </Configuration>
